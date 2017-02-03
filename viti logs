@@ -1,0 +1,52 @@
+--------------------WEB COMMANDS------------
+
+#Created By Ankur Pandey
+#github : AnkDos
+
+
+puts "Hello World"
+puts "welcome to your assistant Viti(for web commands)"
+puts "Enter the command: "
+
+#The User Input
+commands=[[],[]]
+i=0
+j=0
+while i<=1
+while j<=1
+commands[i][j]=String(gets.chomp)
+j+=1
+end
+i+=1
+end
+puts "#{commands[0][1]}"
+#The User Input
+
+
+#---------------FOR WEB ---------------------------
+def web(command) 
+comm=command.split(" ")
+work=false
+
+comm.each{
+    |x,y|
+    if x.downcase.include? "www."
+    system "xdg-open https://#{x}"
+    puts "visit #{x}"
+    work=true
+    end
+    }
+    #puts work
+    if work==false
+    system "xdg-open https://www.google.com/search?q='#{command}'"
+    end
+    end
+   #---------------FOR WEB ---------------------------
+    
+    
+#calling the web command    
+if commands[0][0]=="witi"    
+    web(commands[0][1])
+end    
+#calling the web command
+---------------web commands end---------------
