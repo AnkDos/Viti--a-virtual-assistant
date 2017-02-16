@@ -42,7 +42,7 @@ comm.each{
     def systems(commands)
     len=commands.length
     co =commands.split(" ")
-
+    gr=["me","a"]
     co.each{ |x| 
     if x=="upgrade"
     system "apt-get upgrade"
@@ -50,6 +50,21 @@ comm.each{
     if x=="update"
     system "apt-get update"
     end
+
+     count=0
+        if x=="install" || x=="Install"
+            count= co.index(x)
+
+        end
+
+
+        if co[count+1]==gr[0] || co[count+1]==gr[1]
+            system "apt-get upgrade #{co[count+2]}"
+            break
+        else
+            system "apt-get upgrade #{co[count+2]}"
+
+        end
     }
     
     end
