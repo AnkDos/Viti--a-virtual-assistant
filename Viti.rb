@@ -59,11 +59,11 @@ comm.each{
 
 
         if co[count+1]==gr[0] || co[count+1]==gr[1]
-            system "apt-get upgrade #{co[count+2]}"
+            system "apt-get install #{co[count+2]}"
             break
         else
-            system "apt-get upgrade #{co[count+2]}"
-
+            system "apt-get install #{co[count+1]}"
+break
         end
     }
     
