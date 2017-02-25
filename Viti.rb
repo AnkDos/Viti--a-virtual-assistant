@@ -18,7 +18,7 @@ su=inp.sub(du[0],"")
 
 
 #---------------FOR WEB ---------------------------
-def web(command) 
+def web(command)
 comm=command.split(" ")
 work=false
 
@@ -36,14 +36,14 @@ comm.each{
     end
     end
    #---------------FOR WEB ---------------------------
-    
-    
+
+
     #----------FOR SYSTEM----------------
     def systems(commands)
     len=commands.length
     co =commands.split(" ")
-    gr=["me","a"]
-    co.each{ |x| 
+    #gr=["me","a"]
+    co.each{ |x|
     if x=="upgrade"
     system "apt-get upgrade"
     end
@@ -54,32 +54,31 @@ comm.each{
      count=0
         if x=="install" || x=="Install"
             count= co.index(x)
+            system "apt-get install #{co[count+1]}"
 
         end
 
-
+=begin
         if co[count+1]==gr[0] || co[count+1]==gr[1]
             system "apt-get install #{co[count+2]}"
             break
         else
-            system "apt-get install #{co[count+1]}"
-break
-        end
+=end
     }
-    
+
     end
 
     #-------------FOR SYSTEM
-    
-    
-#calling the web command    
+
+
+#calling the web command
 if first=="witi" || first=="witi " || first=="Witi " || first=="Witi"
     web(su)
-end    
+end
 #calling the web command
 
-#calling the system command    
+#calling the system command
 if first=="siti" || first=="siti " || first=="Siti " || first=="Siti"
     systems(su)
-end    
+end
 #calling the system command
