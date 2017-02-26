@@ -1,20 +1,12 @@
 #Created By Ankur Pandey
 #github : AnkDos
 
-
+#Greet
 puts "Hello World"
 puts "welcome to your assistant Viti"
 puts "Enter the command: "
+#Greet
 
-#The User Input
-
-
-inp=String(gets.chomp)
-du=inp.split(" ")
-first=inp.slice du[0]
-su=inp.sub(du[0],"")
-
-#The User Input
 
 
 #---------------FOR WEB ---------------------------
@@ -71,6 +63,22 @@ comm.each{
     #-------------FOR SYSTEM
 
 
+#The User Input and Processing
+
+    bol=true
+
+    while bol==true
+
+      inp=String(gets.chomp)
+      du=inp.split(" ")
+      first=inp.slice du[0]
+      su=inp.sub(du[0],"")
+
+
+
+
+
+
 #calling the web command
 if first=="witi" || first=="witi " || first=="Witi " || first=="Witi"
     web(su)
@@ -82,3 +90,10 @@ if first=="siti" || first=="siti " || first=="Siti " || first=="Siti"
     systems(su)
 end
 #calling the system command
+
+    if inp==""
+      bol=false
+  end
+end
+
+#The User Input and Processing
